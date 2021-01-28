@@ -9,5 +9,11 @@ fn main() {
     println!("\n\nMAXWEALTH");
     println!("Accounts:\n{:?}\n", accounts);
     println!("Max Wealth:\n{:?}\n", maxwealth::max_wealth(accounts));
+
+    // Sudently Python...ish
+    let mut tup = ("X", "Y");
+    println!("a: {:?} b: {:?}", tup.0, tup.1);
+    tup = (tup.1, tup.0);
+    println!("a: {:?} b: {:?}", tup.0, tup.1);
 }
 
