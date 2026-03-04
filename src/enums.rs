@@ -1,28 +1,42 @@
-// Enums are types that have a few definite values
-
-enum Movement {
-    // Variants
-    Up, Down, Left, Right
+enum DispenserItem {
+    Empty,
+    Ammo(u8),
+    Things(String, i32),
+    Place {x: i32, y: i32},
 }
 
-fn move_avatar(m: Movement) {
-    // Perform action
-    match m {
-        Movement::Up => println!("Moving Up!"),
-        Movement::Down => println!("Moving Down!"),
-        Movement::Left => println!("Moving Left!"),
-        Movement::Right => println!("Moving Right!")
+impl DispenserItem {
+    fn display(&self) -> String {
+        match self {
+            Empty => {
+                "No Item".to_string()
+            },
+            Ammo(bullets) => {
+                format!("Bullets: {}", bullets)
+            },
+            Things(thing, count) => {
+                format!("{}: {}", thing, count)
+            },
+            Place{ x, y } => {
+                format!("x:{} y:{}", x, y)
+            },
+            _ => {
+                "Something or nothing!".to_string()
+            }
+        }
     }
 }
 
-pub fn run() {
-    let avatar1 = Movement::Down;
-    let avatar2 = Movement::Left;
-    let avatar3 = Movement::Right;
-    let avatar4 = Movement::Up;
+use DispenserItem::*;
 
-    move_avatar(avatar1);
-    move_avatar(avatar2);
-    move_avatar(avatar3);
-    move_avatar(avatar4);
+fn main() {
+    let item1 = Empty;
+    let item2 = Ammo(97);
+    let item3 = Things("ball".to_string(), 7);
+    let item4 = Place { x: 12, y: 50 };
+
+    println!("{}", item1.display());
+    println!("{}", item2.display());
+    println!("{}", item3.display());
+    println!("{}", item4.display());
 }
