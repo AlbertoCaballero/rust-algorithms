@@ -1,4 +1,5 @@
 mod maxwealth;
+mod quaternion;
 
 fn main() {
     let mut accounts: Vec<Vec<i32>> = Vec::new();
@@ -15,5 +16,5 @@ fn main() {
     println!("a: {:?} b: {:?}", tup.0, tup.1);
     tup = (tup.1, tup.0);
     println!("a: {:?} b: {:?}", tup.0, tup.1);
+    quaternion::run();
 }
-
