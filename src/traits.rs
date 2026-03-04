@@ -70,4 +70,13 @@ fn main() {
 
     // buster.bark();
     buster.angry_bark();
+
+    angry(waldo);
+    angry(rufus);
+    angry(buster);
+}
+
+fn angry<T: Grumpy>(dog: T) {
+    println!("ANGRY!");
+    dog.angry_bark();
 }
