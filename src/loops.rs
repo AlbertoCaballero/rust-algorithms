@@ -1,4 +1,4 @@
-pub fn run() {
+fn main() {
     let mut count = 0;
 
     // Infinite loop
@@ -25,7 +25,7 @@ pub fn run() {
         count += 1;
     }
 
-    for x in 0..10 {
+    for x in 0..=10 {
         if x % 15 == 0 {
             println!("FizzBuzz");
         } else if x % 3 == 0 {

@@ -20,9 +20,6 @@ impl DispenserItem {
             Place{ x, y } => {
                 format!("x:{} y:{}", x, y)
             },
-            _ => {
-                "Something or nothing!".to_string()
-            }
         }
     }
 }
